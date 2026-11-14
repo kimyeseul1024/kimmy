@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2026 광주은광교회 초등2부 교회소식</title>
+
+  <!-- 카카오톡 등 SNS 공유 시 미리보기(썸네일) 설정 -->
+  <meta property="og:title" content="2026 광주은광교회 초등2부 교회소식">
+  <meta property="og:description" content="이번 주 외울 말씀과 복습 퀴즈를 확인해 보세요!">
+  <meta property="og:image" content="https://kimyeseul1024.github.io/kimmy/thumbnail.png">
+  <meta property="og:url" content="https://kimyeseul1024.github.io/kimmy/">
+
   <style>
     * {
       box-sizing: border-box;
@@ -25,12 +32,12 @@
       padding: 20px;
     }
     .container {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       max-width: 600px;
       width: 100%;
       padding: 40px 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
     .badge {
       display: inline-block;
@@ -38,7 +45,7 @@
       color: #1a73e8;
       font-size: 13px;
       font-weight: 600;
-      padding: 4px 12px;
+      padding: 6px 14px;
       border-radius: 20px;
       margin-bottom: 16px;
     }
@@ -56,9 +63,9 @@
     .info-box {
       background: #f8f9fa;
       border-left: 4px solid #1a73e8;
-      padding: 16px 20px;
-      border-radius: 8px;
-      margin-bottom: 24px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-bottom: 28px;
     }
     .info-box h2 {
       font-size: 16px;
@@ -76,170 +83,19 @@
     .btn-group {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
+    
+    /* 예쁘게 바뀐 버튼 스타일 */
     .btn {
       display: block;
       width: 100%;
       text-align: center;
       font-size: 16px;
-      font-weight: 600;
-      padding: 14px;
+      font-weight: 700;
+      padding: 16px;
       border: none;
-      border-radius: 10px;
+      border-radius: 14px;
       cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-primary {
-      background: #1a73e8;
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: #1557b0;
-    }
-    .btn-secondary {
-      background: #e8f0fe;
-      color: #1a73e8;
-    }
-    .btn-secondary:hover {
-      background: #d2e3fc;
-    }
-    footer {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 12px;
-      color: #999;
-    }
-
-    /* 팝업(모달) 스타일 */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .modal-content {
-      background: #fff;
-      max-width: 650px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      border-radius: 16px;
-      padding: 20px;
-      position: relative;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-    .modal-header h3 {
-      font-size: 18px;
-      color: #111;
-    }
-    .close-btn {
-      background: #f1f3f4;
-      border: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: #555;
-      padding: 6px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      background: #e2e5e8;
-    }
-    .modal-images {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .modal-images img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <span class="badge">온 세상에 복음을 전해요!</span>
-    <h1>또 이르시되 너희는 온 천하에 다니며 만민에게 복음을 전파하라 (마가복음 16장 15절)</h1>
-    <p class="subtitle">2026 광주은광교회 초등2부 교회 소식</p>
-
-    <div class="info-box">
-      <h2>주요 안내 사항</h2>
-      <ul>
-        <li>• <strong>1. 추수감사주일</strong> "한 해 동안 하나님 주신 은혜를 생각하며 감사합시다."</li>
-        <li>• <strong>2. 하반기 제자훈련</strong> 11/8~29(주일, 4회) 수료 시 국내비전트립 참가 자격 부여</li>
-        <li>• <strong>3. 전라어린이대회</strong> 11/21(토) 우리 교회, 출전하는 친구들 모두 파이팅!</li>
-      </ul>
-    </div>
-
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" onclick="openModal('verseModal')">외울말씀 확인하기</button>
-      <button type="button" class="btn btn-secondary" onclick="openModal('quizModal')">퀴즈 확인하기</button>
-    </div>
-
-    <footer>
-      © 2026 광주은광교회 초등2부. All Rights Reserved.
-    </footer>
-  </div>
-
-  <!-- 외울말씀 팝업 창 -->
-  <div id="verseModal" class="modal-overlay" onclick="closeOnBackground(event, 'verseModal')">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>이번 주 외울 말씀</h3>
-        <button type="button" class="close-btn" onclick="closeModal('verseModal')">닫기 ✕</button>
-      </div>
-      <div class="modal-images">
-        <img src="verse.jpg" alt="외울 말씀">
-      </div>
-    </div>
-  </div>
-
-  <!-- 퀴즈 팝업 창 -->
-  <div id="quizModal" class="modal-overlay" onclick="closeOnBackground(event, 'quizModal')">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>복습 퀴즈</h3>
-        <button type="button" class="close-btn" onclick="closeModal('quizModal')">닫기 ✕</button>
-      </div>
-      <div class="modal-images">
-        <img src="퀴즈01.png" alt="복습 퀴즈 1">
-        <img src="퀴즈02.png" alt="복습 퀴즈 2">
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function openModal(modalId) {
-      document.getElementById(modalId).style.display = 'flex';
-    }
-    function closeModal(modalId) {
-      document.getElementById(modalId).style.display = 'none';
-    }
-    function closeOnBackground(event, modalId) {
-      if (event.target.id === modalId) {
-        closeModal(modalId);
-      }
-    }
-  </script>
-
-</body>
-</html>
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all
