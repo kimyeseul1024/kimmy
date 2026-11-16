@@ -3,297 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 전라어린이대회 성경퀴즈 플래시카드</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>광주은광교회 비전찬양대 연습실</title>
     <style>
-        body { font-family: 'Pretendard', sans-serif; }
-        .perspective-1000 { perspective: 1000px; }
-        .transform-style-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
-        .rotate-y-180 { transform: rotateY(180deg); }
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* 공지사항 박스 스타일 */
+        .notice-card {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .notice-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* 대표기도 순서 강조 스타일 */
+        .prayer-box {
+            background: #ffffff;
+            border-left: 4px solid #f39c12;
+            padding: 8px 12px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .notice-card p {
+            margin: 0;
+            white-space: pre-line;
+        }
+
+        /* 날짜별 카드 스타일 */
+        .schedule-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .schedule-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .song-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        /* 파트별 버튼 그리드 */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .button-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f3f5;
+            color: #495057;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+
+        /* 합창 버튼은 전체 너비 사용 */
+        .btn-full {
+            grid-column: span 2;
+            background-color: var(--accent-color) !important;
+            color: white !important;
+            border-color: #2980b9 !important;
+        }
+
+        .button-grid a:hover {
+            background-color: #e2e6ea;
+        }
+
+        .btn-full:hover {
+            background-color: #2980b9 !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #888;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen text-slate-800 flex flex-col justify-between">
+<body>
 
-    <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-md shadow-sm border-b border-indigo-100 p-4 sticky top-0 z-50">
-        <div class="max-w-3xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <span class="bg-indigo-600 text-white p-2 rounded-xl text-lg font-bold shadow">🗂️</span>
-                <div>
-                    <h1 class="text-base sm:text-lg font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">2026 전라어린이대회 성경퀴즈 플래시카드</h1>
-                    <p class="text-xs text-slate-500 font-medium">에스더, 느헤미야, 에스라, 욥기, 잠언, 전도서, 아가 (총 100문제)</p>
-                </div>
+    <div class="container">
+        <header>
+            <h1>🎶 광주은광교회 비전찬양대</h1>
+            <p>언제 어디서나 찬양을 준비하는 연습실입니다</p>
+        </header>
+
+        <!-- 공지사항 및 대표기도 영역 -->
+        <div class="notice-card">
+            <h3>📢 공지사항</h3>
+            
+            <!-- 대표기도 순서 칸 -->
+            <div class="prayer-box">
+                🙏 이번 주 대표기도: <strong>[여기에 기도자 성함 입력] 집사님 / 장로님</strong>
             </div>
-        </div>
-    </header>
 
-    <!-- Main Container -->
-    <main class="max-w-2xl w-full mx-auto px-4 py-6 flex-1 flex flex-col justify-center">
-
-        <!-- Filters Section -->
-        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-6 flex flex-wrap gap-3 items-center justify-between">
-            <div class="flex items-center gap-2">
-                <label class="text-xs font-bold text-slate-500 uppercase">성경:</label>
-                <select id="filter-book" onchange="applyFilters()" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs rounded-xl px-3 py-2 outline-none font-medium">
-                    <option value="ALL">전체 (7권)</option>
-                    <option value="에스라">에스라</option>
-                    <option value="느헤미야">느헤미야</option>
-                    <option value="에스더">エ스더</option>
-                    <option value="욥기">욥기</option>
-                    <option value="잠언">잠언</option>
-                    <option value="전도서">전도서</option>
-                    <option value="아가">아가서</option>
-                </select>
-            </div>
-            <div class="flex items-center gap-2">
-                <label class="text-xs font-bold text-slate-500 uppercase">유형:</label>
-                <select id="filter-type" onchange="applyFilters()" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs rounded-xl px-3 py-2 outline-none font-medium">
-                    <option value="ALL">전체 유형</option>
-                    <option value="OX">O, X</option>
-                    <option value="단답형">단답형</option>
-                    <option value="객관식">객관식</option>
-                    <option value="괄호넣기">괄호넣기</option>
-                </select>
-                <button onclick="shuffleCards()" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold px-3 py-2 rounded-xl text-xs transition border border-indigo-200">
-                    🔀 섞기
-                </button>
-            </div>
+            <p>1. 연습 영상은 매주 업로드됩니다. 각 파트별 음원을 미리 숙지해 주세요.
+2. 찬양 연습 전 기도로 마음을 모아주시기 바랍니다.</p>
         </div>
 
-        <!-- Counter Status -->
-        <div class="flex justify-between items-center text-xs font-bold text-slate-500 px-2 mb-2">
-            <span id="fc-counter">카드 1 / 100</span>
-            <span id="fc-badge" class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">O, X 문제</span>
-        </div>
-
-        <!-- Flashcard View Component -->
-        <div class="perspective-1000 w-full h-80 sm:h-96 cursor-pointer mb-6" onclick="flipCard()">
-            <div id="flashcard-inner" class="relative w-full h-full duration-500 transform-style-3d shadow-xl rounded-3xl">
-                <!-- Front (Question) -->
-                <div class="absolute inset-0 bg-gradient-to-br from-white to-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between backface-hidden">
-                    <div class="flex justify-between items-center">
-                        <span id="fc-book-tag" class="text-xs font-bold bg-purple-100 text-purple-700 px-3 py-1 rounded-lg">에스라</span>
-                        <span class="text-xs text-indigo-500 font-semibold animate-pulse">💡 터치해서 정답 확인</span>
-                    </div>
-                    <div class="my-auto text-center px-2">
-                        <h2 id="fc-question" class="text-lg sm:text-2xl font-bold text-slate-800 leading-relaxed">
-                            에스라는 예루살렘으로 올라오기 전에 왕에게 필요한 것을 요청할 수 있었습니다.
-                        </h2>
-                    </div>
-                    <div class="text-center text-xs font-bold text-slate-400">
-                        카드를 클릭해 뒤집어보세요 ➔
-                    </div>
-                </div>
-                <!-- Back (Answer) -->
-                <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-3xl p-8 flex flex-col justify-between backface-hidden rotate-y-180 shadow-2xl">
-                    <div class="flex justify-between items-center text-indigo-200">
-                        <span class="text-xs font-bold uppercase tracking-wider">정답 및 해설</span>
-                        <span class="text-xs">터치해서 돌아가기</span>
-                    </div>
-                    <div class="my-auto text-center space-y-3 px-2">
-                        <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-2xl text-2xl sm:text-3xl font-extrabold text-amber-300 tracking-wide" id="fc-answer">
-                            정답: O
-                        </div>
-                        <p id="fc-explanation" class="text-xs sm:text-sm text-indigo-100 font-medium max-w-md mx-auto leading-relaxed">
-                            에스라는 아닥사스다 왕에게 조서와 필요한 지원을 요청하여 받아내었습니다.
-                        </p>
-                    </div>
-                    <div class="text-center text-xs text-indigo-200 font-medium">
-                        ➔ 다음 카드로 넘어가려면 아래 버튼을 눌러주세요
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Flashcard Controls -->
-        <div class="flex justify-center items-center gap-3">
-            <button onclick="prevCard()" class="bg-white hover:bg-slate-50 text-slate-700 font-bold px-6 py-3 rounded-2xl shadow-sm border border-slate-200 transition text-sm">
-                ◀ 이전 카드
-            </button>
-            <button onclick="nextCard()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-2xl shadow-md shadow-indigo-200 transition text-sm">
-                다음 카드 ▶
-            </button>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="text-center py-4 text-xs text-slate-400 font-medium">
-        2026 전라어린이대회 성경퀴즈 예상문제 플래시카드
-    </footer>
-
-    <!-- Script Logic -->
-    <script>
-        const allQuestions = [
-            { id: 1, book: "에스라", type: "OX", question: "에스라는 예루살렘으로 올라오기 전에 왕에게 필요한 것을 요청할 수 있었습니다.", answer: "O", explanation: "에스라는 아닥사스다 왕에게 조서와 필요한 지원을 요청할 수 있었고 왕이 허락하였습니다." },
-            { id: 2, book: "에스라", type: "OX", question: "에스라는 예루살렘으로 가는 길에 하나님의 보호하심을 구하기 위해 금식했습니다.", answer: "O", explanation: "아하와 강가에서 금식하며 하나님의 도우심을 간구했습니다." },
-            { id: 3, book: "에스라", type: "OX", question: "에스라가 예루살렘에 도착했을 때 모든 백성이 하나님께 순종하고 있었습니다.", answer: "X", explanation: "당시 율법에 순종하지 않고 이방 여인과 결혼한 죄가 있었습니다." },
-            { id: 4, book: "에스라", type: "OX", question: "에스라가 백성의 죄를 알고 하나님 앞에서 슬퍼했습니다.", answer: "O", explanation: "속옷과 겉옷을 찢고 머리털과 수염을 뽑으며 슬퍼했습니다." },
-            { id: 5, book: "느헤미야", type: "OX", question: "성전을 다시 짓는 일을 방해했던 사람들은 유다 백성에게 편지를 보냈습니다.", answer: "O", explanation: "산발랏과 도비야 등이 편지를 보내 방해하고 위협했습니다." },
-            { id: 6, book: "느헤미야", type: "OX", question: "느헤미야는 예루살렘 성벽을 혼자서 만들었습니다.", answer: "X", explanation: "많은 백성과 함께 힘을 합쳐 52일 만에 완성했습니다." },
-            { id: 7, book: "느헤미야", type: "OX", question: "느헤미야는 성벽을 세우는 동안 여러 가지 방해를 받았습니다.", answer: "O", explanation: "산발랏, 도비야, 게셈 등의 끊임없는 방해와 위협을 받았습니다." },
-            { id: 8, book: "느헤미야", type: "OX", question: "산발랏과 도비야는 느헤미야의 성벽 재건을 좋아했습니다.", answer: "X", explanation: "이스라엘 자손을 흥성하게 하려는 사람을 심히 근심하고 싫어했습니다." },
-            { id: 9, book: "느헤미야", type: "OX", question: "느헤미야는 백성들에게 하나님을 기억하며 싸우라고 격려했습니다.", answer: "O", explanation: "지극히 크고 두려우신 주를 기억하고 너희 형제와 자녀와 아내와 집을 위하여 싸우라 하였습니다." },
-            { id: 10, book: "느헤미야", type: "OX", question: "느헤미야 시대에 백성들은 하나님의 말씀을 듣기 위해 모였습니다.", answer: "O", explanation: "수문 앞 광장에 모여 에스라가 낭독하는 율법책을 들었습니다." },
-            { id: 11, book: "에스더", type: "OX", question: "에스더는 자신의 유다인이라는 사실을 처음부터 모든 사람에게 알렸습니다.", answer: "X", explanation: "모르드개의 명령에 따라 자신의 민족과 종족을 알리지 않았습니다." },
-            { id: 12, book: "에스더", type: "OX", question: "에스더는 왕의 허락 없이 왕에게 나아가는 것이 위험한 일이었습니다.", answer: "O", explanation: "법례를 어기고 왕에게 나아가면 오직 왕이 금 홀을 내밀어야 살 수 있었습니다." },
-            { id: 13, book: "에스더", type: "OX", question: "왕은 에스더에게 금 홀을 내밀어 에스더를 받아 주었습니다.", answer: "O", explanation: "에스더가 안뜰에 섰을 때 왕이 사랑스러워 금 홀을 내밀었습니다." },
-            { id: 14, book: "에스더", type: "OX", question: "왕은 모르드개에게 큰 은혜를 입었지만 아무에게도 알려지지 않았습니다.", answer: "X", explanation: "빅단과 데레스의 음모를 고발한 일은 왕의 연대기(일기)에 기록되었습니다." },
-            { id: 15, book: "에스더", type: "OX", question: "하만은 모르드개가 유대인이라서 싫어했습니다.", answer: "X", explanation: "모르드개가 자신에게 무릎을 꿇지도 않고 절하지도 않기 때문에 분노했습니다." },
-            { id: 16, book: "욥기", type: "OX", question: "욥의 아내는 욥에게 하나님을 계속 찬송하라고 격려했습니다.", answer: "X", explanation: "하나님을 저주하고 죽으라고 권면했습니다." },
-            { id: 17, book: "욥기", type: "OX", question: "욥은 자신의 어머니를 저주한 적이 있습니다.", answer: "X", explanation: "자신이 태어난 생일을 저주하였습니다." },
-            { id: 18, book: "욥기", type: "OX", question: "하나님께서는 폭풍 가운데서 욥에게 말씀하셨습니다.", answer: "O", explanation: "폭풍 가운데서 욥에게 말씀하시며 하나님의 절대 주권을 나타내셨습니다." },
-            { id: 19, book: "욥기", type: "OX", question: "욥은 하나님께서 하시는 모든 일을 다 이해할 수 있었습니다.", answer: "X", explanation: "인간은 하나님의 뜻과 섭리를 온전히 측량할 수 없습니다." },
-            { id: 20, book: "잠언", type: "OX", question: "잠언은 32장으로 기록되어 있습니다.", answer: "X", explanation: "잠언은 총 31장으로 구성되어 있습니다." },
-            { id: 21, book: "잠언", type: "OX", question: "잠언은 친구가 잘못했을 때 항상 미워하라고 가르칩니다.", answer: "X", explanation: "사랑은 허다한 허물을 가리우며 죄를 덮어주고 바른 길로 인도합니다." },
-            { id: 22, book: "전도서", type: "OX", question: "전도서는 웃을 때와 울 때가 있다고 말합니다.", answer: "O", explanation: "전도서 3장에는 범사에 기한이 있고 천하 만사가 때가 있다고 하며 울 때가 있고 웃을 때가 있다고 합니다." },
-            { id: 23, book: "전도서", type: "OX", question: "전도서는 모든 일에는 때가 있다고 가르칩니다.", answer: "O", explanation: "날 때가 있고 죽을 때가 있으며 심을 때가 있고 뽑을 때가 있습니다." },
-            { id: 24, book: "아가", type: "OX", question: "아가서는 솔로몬과 술람미 여인의 사랑을 기록하고 있는 책입니다.", answer: "O", explanation: "솔로몬의 아가로 순수한 남녀 간의 사랑과 그리스도와 교회의 사랑을 예표합니다." },
-            { id: 25, book: "아가", type: "OX", question: "아가서에서는 사랑을 돈으로 살 수 있다고 가르칩니다.", answer: "X", explanation: "사람이 그의 온 재산을 다 주고 사랑과 바꾸려 할지라도 오히려 멸시를 받으리라 하였습니다." },
-            { id: 26, book: "에스라", type: "단답형", question: "에스라가 예루살렘으로 올라올 때 왕의 이름은 무엇이었나요?", answer: "아닥사스다", explanation: "바사 왕 아닥사스다의 조서를 받아 예루살렘으로 귀환했습니다." },
-            { id: 27, book: "에스라", type: "단답형", question: "에스라는 예루살렘으로 가기 전에 무엇을 하며 하나님께 도움을 구했나요?", answer: "금식하고 기도", explanation: "아하와 강가에서 금식하며 하나님의 보호하심을 간구했습니다." },
-            { id: 28, book: "에스라", type: "단답형", question: "에스라는 하나님의 율법을 읽고 백성에게 무엇을 가르쳤나요?", answer: "하나님의 말씀", explanation: "율법의 규례와 법도를 백성들에게 가르쳤습니다." },
-            { id: 29, book: "에스라", type: "단답형", question: "성전에서 하나님을 섬기던 사람들을 돕는 사람들을 무엇이라고 불렀나요?", answer: "레위 사람", explanation: "레위 지파 사람들이 성전 제반 업무를 도왔습니다." },
-            { id: 30, book: "느헤미야", type: "단답형", question: "느헤미야가 왕에게 성벽 재건을 위해 요청한 것은 무엇인가요?", answer: "예루살렘으로 가는 허락", explanation: "유다 조상의 묘실이 있는 성읍에 가서 성벽을 건축하게 해달라고 요청했습니다." },
-            { id: 31, book: "느헤미야", type: "단답형", question: "느헤미야가 성벽을 둘러보며 가장 먼저 살핀 것은 무엇인가요?", answer: "무너진 성벽과 성문", explanation: "밤에 예루살렘 성벽의 무너진 곳과 불린 성문을 둘러보았습니다." },
-            { id: 32, book: "느헤미야", type: "단답형", question: "성벽 재건을 방해한 산발랏과 도비야는 어느 지역(또는 족속) 사람인가요?", answer: "호론, 암몬", explanation: "호론 사람 산발랏과 암몬 사람 도비야입니다." },
-            { id: 33, book: "느헤미야", type: "단답형", question: "느헤미야가 백성들에게 하나님을 기억하라고 한 이유는 무엇인가요?", answer: "적들과 싸워야 했기 때문", explanation: "지극히 크고 두려우신 주를 기억하고 대적에 맞서기 위함입니다." },
-            { id: 34, book: "에스더", type: "단답형", question: "에스더가 왕에게 부탁하기 위해 베푼 것은 무엇인가요?", answer: "잔치", explanation: "하만을 동반한 왕을 위해 연이어 잔치를 베풀었습니다." },
-            { id: 35, book: "에스더", type: "단답형", question: "왕이 잠이 오지 않아 읽게 한 책은 무엇이 기록된 책이었나요?", answer: "왕의 행적(역대 일기)", explanation: "역대 일기를 읽게 하여 모르드개의 공로를 발견했습니다." },
-            { id: 36, book: "에스더", type: "단답형", question: "왕이 모르드개에게 왕의 옷을 입게 하라고 명한 사람은 누구인가요?", answer: "하만", explanation: "하만이 직접 모르드개에게 왕의 옷을 입히고 말을 태워 성중 거리로 다녔습니다." },
-            { id: 37, book: "에스더", type: "단답형", question: "하만이 모르드개를 달려고 만든 것은 무엇인가요?", answer: "나무(장대)", explanation: "높이가 50규빗 되는 나무를 세우고 모르드개를 달고자 했습니다." },
-            { id: 38, book: "에스더", type: "단답형", question: "에스더가 자기 민족을 살리기 위해 베푼 잔치는 총 몇 번인가요?", answer: "2번", explanation: "1차 잔치와 2차 잔치를 베풀었습니다." },
-            { id: 39, book: "욥기", type: "단답형", question: "욥이 살던 곳의 이름은 무엇인가요?", answer: "우스 땅", explanation: "우스 땅에 욥이라 불리는 온전하고 정직한 사람이 있었습니다." },
-            { id: 40, book: "욥기", type: "단답형", question: "욥에게는 아들이 몇 명 있었나요?", answer: "일곱 명", explanation: "아들 일곱과 딸셋이 있었습니다." },
-            { id: 41, book: "욥기", type: "단답형", question: "욥에게는 딸이 몇 명 있었나요?", answer: "세 명", explanation: "예쁜 세 딸이 있었습니다." },
-            { id: 42, book: "욥기", type: "단답형", question: "욥의 재산 중 많은 수를 차지했던 동물은 무엇이었나요?", answer: "양", explanation: "양 7천 마리, 낙타 3천 마리 등이 있었습니다." },
-            { id: 43, book: "욥기", type: "단답형", question: "욥의 세 친구의 말이 끝난 후 이어서 말을 한 사람은 누구인가요?", answer: "엘리후", explanation: "나이가 어린 부스 사람 바라첼의 아들 엘리후가 분노하여 말했습니다." },
-            { id: 44, book: "잠언", type: "단답형", question: "잠언의 중심주제가 되는 구절은 어디인가요?", answer: "잠언 1장 7절", explanation: "여호와를 경외하는 것이 지식의 근본이거늘..." },
-            { id: 45, book: "잠언", type: "단답형", question: "잠언에서 의인은 몇 번 넘어질지라도 다시 일어난다고 기록하나요?", answer: "일곱 번", explanation: "대저 의인은 일곱 번 넘어질지라도 다시 일어나려니와..." },
-            { id: 46, book: "잠언", type: "단답형", question: "“네 부모를 즐겁게 하며 너를 낳은 어미를 기쁘게 하라\"는 잠언 몇 장에 나와 있나요?", answer: "23장", explanation: "잠언 23장 25절 말씀입니다." },
-            { id: 47, book: "전도서", type: "단답형", question: "전도서의 저자는 누구인가요?", answer: "전도자", explanation: "다윗의 아들 예루살렘 왕 전도자입니다." },
-            { id: 48, book: "전도서", type: "단답형", question: "전도서에서 한 사람이면 패하겠거니와 두 사람이면 맞설 수 있나니 몇 겹 줄은 쉽게 끊어지지 아니한다고 기록하나요?", answer: "세 겹 줄", explanation: "세 겹 줄은 쉽게 끊어지지 아니하느니라." },
-            { id: 49, book: "아가", type: "단답형", question: "아가서에서 사랑하는 사람의 목소리를 듣고 기뻐하는 사람은 누구인가요?", answer: "술람미 여인(여인)", explanation: "사랑하는 자의 목소리가 들리는구나..." },
-            { id: 50, book: "아가", type: "단답형", question: "아가서에서 사랑하는 사람을 찾아다니는 장면에서 여인은 누구를 찾았나요?", answer: "사랑하는 사람(신랑)", explanation: "마음에 사랑하는 자를 찾아다니는 내용이 나옵니다." },
-            { id: 51, book: "에스라", type: "객관식", question: "에스라가 예루살렘으로 돌아올 때 왕은 누구였나요?", answer: "아닥사스다 (①다윗 ②솔로몬 ③아닥사스다 ④사울 중 ③번)", explanation: "바사 왕 아닥사스다입니다." },
-            { id: 52, book: "에스라", type: "객관식", question: "에스라는 예루살렘으로 가기 전에 무엇을 했나요?", answer: "금식하며 하나님께 기도했다", explanation: "아하와 강가에서 금식하며 하나님의 도움을 구했습니다." },
-            { id: 53, book: "에스라", type: "객관식", question: "에스라가 백성의 죄를 알게 되었을 때 어떤 모습을 보였나요?", answer: "하나님 앞에서 슬퍼하며 기도했다", explanation: "속옷과 겉옷을 찢으며 애통해했습니다." },
-            { id: 54, book: "에스라", type: "객관식", question: "성전을 다시 짓는 일을 방해한 사람들은 어떻게 했나요?", answer: "편지를 보내 방해했다", explanation: "왕에게 상소문과 편지를 보내 공사를 방해했습니다." },
-            { id: 55, book: "느헤미야", type: "객관식", question: "느헤미야가 왕에게 요청한 것은 무엇인가요?", answer: "예루살렘에 가서 성벽을 세울 수 있게 해 달라는 것", explanation: "유다 성읍을 건축하게 해달라고 요청했습니다." },
-            { id: 56, book: "느헤미야", type: "객관식", question: "느헤미야가 밤에 예루살렘을 둘러본 이유는 무엇인가요?", answer: "성벽의 상태를 살펴보려고", explanation: "무너진 성벽과 성문 상태를 정확히 파악하기 위함입니다." },
-            { id: 57, book: "느헤미야", type: "객관식", question: "산발랏과 도비야는 무엇을 방해했나요?", answer: "성벽을 다시 세우는 것", explanation: "예루살렘 성벽 재건 공사를 집요하게 방해했습니다." },
-            { id: 58, book: "느헤미야", type: "객관식", question: "느헤미야는 어려운 일을 하면서 누구를 의지했나요?", answer: "하나님", explanation: "철저히 기도로 하나님을 의지했습니다." },
-            { id: 59, book: "에스더", type: "객관식", question: "에스더가 왕에게 자신의 부탁을 하기 위해 준비한 것은 무엇인가요?", answer: "잔치", explanation: "왕과 하만을 위한 연회를 베풀었습니다." },
-            { id: 60, book: "에스더", type: "객관식", question: "왕이 잠이 오지 않을 때 무엇을 읽게 했나요?", answer: "왕의 행적을 기록한 책", explanation: "역대 일기를 읽게 했습니다." },
-            { id: 61, book: "에스더", type: "객관식", question: "왕은 모르드개에게 무엇을 입혔나요?", answer: "왕의 옷", explanation: "왕이 입는 왕복을 입히고 관을 씌웠습니다." },
-            { id: 62, book: "에스더", type: "객관식", question: "하만은 왜 모르드개를 미워했나요?", answer: "모르드개가 자신에게 절하지 않았기 때문에", explanation: "대궐 문에 앉은 모르드개가 무릎을 꿇지도 않고 절하지도 않았기 때문입니다." },
-            { id: 63, book: "에스더", type: "객관식", question: "에스더는 왕에게 무엇을 부탁했나요?", answer: "자기 민족을 살려 달라고", explanation: "자신의 생명과 민족의 생명을 구원해 달라고 간구했습니다." },
-            { id: 64, book: "욥기", type: "객관식", question: "욥은 어디에 살았나요?", answer: "우스 땅", explanation: "우스 땅에 거주하던 욥입니다." },
-            { id: 65, book: "욥기", type: "객관식", question: "욥에게는 아들이 몇 명 있었나요?", answer: "7명", explanation: "아들 일곱 명이 있었습니다." },
-            { id: 66, book: "욥기", type: "객관식", question: "욥에게는 딸이 몇 명 있었나요?", answer: "3명", explanation: "딸 세 명이 있었습니다." },
-            { id: 67, book: "욥기", type: "객관식", question: "욥의 친구들이 욥을 찾아온 목적은 무엇이었나요?", answer: "욥을 위로하기 위해", explanation: "서로 약속하고 와서 그를 조문하며 위로하려 했습니다." },
-            { id: 68, book: "욥기", type: "객관식", question: "하나님께서는 욥에게 친구들을 위해 무엇을 하라고 하셨나요?", answer: "기도하라고", explanation: "내 종 욥이 너희를 위하여 기도할 것인즉..." },
-            { id: 69, book: "잠언", type: "객관식", question: "잠언에서 부지런함을 배우라고 한 작은 동물은 무엇인가요?", answer: "개미", explanation: "게으른 자여 개미에게 가서 그가 하는 것을 보고 지혜를 얻으라." },
-            { id: 70, book: "잠언", type: "객관식", question: "잠언은 교만한 사람에게 어떤 일이 일어날 수 있다고 가르치나요?", answer: "넘어질 수 있다", explanation: "교만은 패망의 선봉이요 거만한 마음은 넘어짐의 앞잡이니라." },
-            { id: 71, book: "잠언", type: "객관식", question: "잠언에서 지혜를 찾는 사람은 무엇을 찾는 사람과 같나요?", answer: "보물을 찾는 사람", explanation: "은을 찾는 것같이 그것을 구하며 감추어진 보배를 찾는 것같이..." },
-            { id: 72, book: "전도서", type: "객관식", question: "전도서에서는 젊을 때 누구를 기억하라고 하나요?", answer: "창조주", explanation: "너는 청년의 때에 너의 창조주를 기억하라." },
-            { id: 73, book: "전도서", type: "객관식", question: "전도서에서 “두 사람이 한 사람보다 낫다\"고 하는 이유는 무엇인가요?", answer: "서로 도울 수 있어서", explanation: "그들이 수고함으로 좋은 상을 얻을 것임이라." },
-            { id: 74, book: "아가", type: "객관식", question: "아가서는 주로 무엇에 대해 노래하나요?", answer: "사랑", explanation: "솔로몬의 아름다운 사랑의 노래입니다." },
-            { id: 75, book: "아가", type: "객관식", question: "아가서에서 사랑하는 사람의 아름다움을 표현할 때 많이 사용하는 것은 무엇인가요?", answer: "자연과 꽃", explanation: "레바논의 백향목, 샤론의 장미, 백합화 등 자연의 비유가 많습니다." },
-            { id: 76, book: "에스라", type: "괄호넣기", question: "에스라는 예루살렘으로 올라가기 전에 하나님께 ( 기도 )하고 금식했습니다.", answer: "기도", explanation: "금식하며 하나님께 기도하였습니다." },
-            { id: 77, book: "에스라", type: "괄호넣기", question: "( 바사 왕 고레스 ) 원년에 여호와께서 예레미야의 입을 통하여 하신 말씀을 이루게 하시려고...", answer: "바사 왕 고레스", explanation: "바사 왕 고레스 원년에 이루어졌습니다." },
-            { id: 78, book: "에스라", type: "괄호넣기", question: "에스라는 백성의 죄를 듣고 하나님 앞에서 ( 회개 )했습니다.", answer: "회개", explanation: "슬퍼하며 통곡하고 회개하였습니다." },
-            { id: 79, book: "에스라", type: "괄호넣기", question: "성전을 다시 짓는 일을 방해하던 사람들이 왕에게 ( 편지/상소문 )을 보냈습니다.", answer: "편지(상소문)", explanation: "아닥사스다 왕에게 고소하는 편지를 보냈습니다." },
-            { id: 80, book: "느헤미야", type: "괄호넣기", question: "느헤미야 말씀 중 “그 때에 내가 왕의 ( 술 관원 )이 되었느니라.”", answer: "술 관원", explanation: "아다사스다 왕 앞의 술 관원이었습니다." },
-            { id: 81, book: "느헤미야", type: "괄호넣기", question: "느헤미야는 밤에 예루살렘의 성벽을 직접 ( 살펴 )보았습니다.", answer: "살펴", explanation: "밤에 일어나 무너진 성벽을 꼼꼼히 살펴보았습니다." },
-            { id: 82, book: "느헤미야", type: "괄호넣기", question: "그 때에 대제사장 엘리아십이 그의 형제 제사장들과 함께 일어나 ( 양문 )을 건축하여...", answer: "양문", explanation: "양문을 건축하고 성별하였습니다." },
-            { id: 83, book: "느헤미야", type: "괄호넣기", question: "느헤미야의 성벽 재건을 막았던 사람은 산발랏과 도비야와 ( 게셈 )입니다.", answer: "게셈", explanation: "아라비아 사람 게셈 등이 있었습니다." },
-            { id: 84, book: "느헤미야", type: "괄호넣기", question: "느헤미야는 어려움이 있을 때 하나님을 ( 의지 )했습니다.", answer: "의지", explanation: "기도하며 하나님을 온전히 의지했습니다." },
-            { id: 85, book: "느헤미야", type: "괄호넣기", question: "백성들은 힘을 합쳐 성벽을 ( 건축 )했습니다.", answer: "건축", explanation: "마음을 다해 성벽을 건축하였습니다." },
-            { id: 86, book: "에스더", type: "괄호넣기", question: "에스더는 자기 민족을 구하기 위해 왕에게 ( 잔치 )을 베풀었습니다.", answer: "잔치", explanation: "왕과 하만을 초청하여 잔치를 열었습니다." },
-            { id: 87, book: "에스더", type: "괄호넣기", question: "왕이 잠이 오지 않아 읽게 한 책에는 왕의 ( 행적 )이 기록되어 있었습니다.", answer: "행적", explanation: "역대 일기(왕의 행적)에 기록되어 있었습니다." },
-            { id: 88, book: "에스더", type: "괄호넣기", question: "왕후 ( 와스디 ) 아하수에로 왕궁에서 여인들을 위하여 잔치를 베푸니라.", answer: "와스디", explanation: "폐위되기 전 왕후 와스디가 잔치를 베풀었습니다." },
-            { id: 89, book: "에스더", type: "괄호넣기", question: "( 도성 수산 )에 한 유다인이 있으니 이름은 모르드개라", answer: "도성 수산", explanation: "도성 수산에 유다인 모르드개가 있었습니다." },
-            { id: 90, book: "에스더", type: "괄호넣기", question: "왕이 이르되 왕후 에스더여 그대의 소원이 무엇이며 요구가 무엇이냐 ( 나라의 절반이라도 ) 그대에게 주겠노라 하니", answer: "나라의 절반이라도", explanation: "나라의 절반이라도 시행하겠노라 약속했습니다." },
-            { id: 91, book: "욥기", type: "괄호넣기", question: "우스 땅에 욥이라 불리는 사람이 있었는데 그 사람은 ( 온전 )하고 ( 정직 )하여 하나님을 경외하며 악에서 떠난 자더라", answer: "온전, 정직", explanation: "온전하고 정직하여 하나님을 경외했습니다." },
-            { id: 92, book: "욥기", type: "괄호넣기", question: "욥에게는 아들 ( 일곱 ) 명과 딸 세 명이 있었습니다.", answer: "일곱", explanation: "아들 일곱 명과 딸 세 명이 있었습니다." },
-            { id: 93, book: "욥기", type: "괄호넣기", question: "내가 모태에서 알몸으로 나왔사온즉 또한 알몸이 그리로 돌아가올지라 ( 주신 이도 ) ( 거두신 이도 ) 여호와시오니...", answer: "주신 이도, 거두신 이도", explanation: "주신 이도 여호와시요 거두신 이도 여호와시오니..." },
-            { id: 94, book: "욥기", type: "괄호넣기", question: "내가 그를 네 손에 맡기노라 다만 그의 ( 생명 )은 해하지 말지니라.", answer: "생명", explanation: "사탄에게 허락하시되 생명은 해하지 말라 하셨습니다." },
-            { id: 95, book: "잠언", type: "괄호넣기", question: "잠언은 우리에게 ( 지혜 )롭게 살아가는 방법을 가르쳐 줍니다.", answer: "지혜", explanation: "지혜와 명철을 얻게 합니다." },
-            { id: 96, book: "잠언", type: "괄호넣기", question: "철이 ( 철 )을 날카롭게 하는 것 같이 사람이 그의 ( 친구 )의 얼굴을 빛나게 하느니라.", answer: "철, 친구", explanation: "철이 철을 날카롭게 하는 것 같이 사람이 그의 친구의 얼굴을 빛나게 하느니라." },
-            { id: 97, book: "전도서", type: "괄호넣기", question: "전도서에서는 “범사에 ( 기한 )가 있고\"라고 말씀합니다.", answer: "기한", explanation: "범사에 기한이 있고 천하 만사가 때가 있나니." },
-            { id: 98, book: "전도서", type: "괄호넣기", question: "( 묵시 )가 없으면 백성이 ( 방자히 ) 행하거니와 율법을 지키는 자는 복이 있느니라.", answer: "묵시, 방자히", explanation: "(잠언 29:18 구절 등 지혜서 배경)" },
-            { id: 99, book: "아가", type: "괄호넣기", question: "( 나의 사랑하는 자가 ) 내게 말하여 이르기를 나의 사랑, 내 어여쁜 자야 일어나서 함께 가자.", answer: "나의 사랑하는 자가", explanation: "나의 사랑하는 자가 내게 말하여 이르기를..." },
-            { id: 100, book: "아가", type: "괄호넣기", question: "우리를 위하여 ( 여우 ) 곧 포도원을 허는 ( 작은 여우 )를 잡으라 우리의 포도원에 꽃이 피었음이라.", answer: "여우, 작은 여우", explanation: "포도원을 허는 작은 여우를 잡으라." }
-        ];
-
-        let filteredQuestions = [...allQuestions];
-        let fcIndex = 0;
-        let isFlipped = false;
-
-        function applyFilters() {
-            const bookVal = document.getElementById('filter-book').value;
-            const typeVal = document.getElementById('filter-type').value;
-
-            filteredQuestions = allQuestions.filter(q => {
-                const matchBook = (bookVal === 'ALL' || q.book === bookVal);
-                const matchType = (typeVal === 'ALL' || q.type === typeVal);
-                return matchBook && matchType;
-            });
-
-            if (filteredQuestions.length === 0) {
-                filteredQuestions = [{ id: 0, book: '없음', type: '알림', question: '해당 조건에 일치하는 문제가 없습니다!', answer: '-', explanation: '-' }];
-            }
-
-            fcIndex = 0;
-            isFlipped = false;
-            updateUI();
-        }
-
-        function shuffleCards() {
-            filteredQuestions.sort(() => Math.random() - 0.5);
-            fcIndex = 0;
-            isFlipped = false;
-            updateUI();
-        }
-
-        function updateUI() {
-            const q = filteredQuestions[fcIndex];
-            document.getElementById('fc-counter').innerText = `카드 ${fcIndex + 1} / ${filteredQuestions.length}`;
-            document.getElementById('fc-badge').innerText = q.type;
-            document.getElementById('fc-book-tag').innerText = q.book;
-            document.getElementById('fc-question').innerText = q.question;
-            document.getElementById('fc-answer').innerText = `정답: ${q.answer}`;
-            document.getElementById('fc-explanation').innerText = q.explanation;
-
-            isFlipped = false;
-            document.getElementById('flashcard-inner').style.transform = 'rotateY(0deg)';
-        }
-
-        function flipCard() {
-            isFlipped = !isFlipped;
-            const inner = document.getElementById('flashcard-inner');
-            inner.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-        }
-
-        function nextCard() {
-            fcIndex = (fcIndex + 1) % filteredQuestions.length;
-            updateUI();
-        }
-
-        function prevCard() {
-            fcIndex = (fcIndex - 1 + filteredQuestions.length) % filteredQuestions.length;
-            updateUI();
-        }
-
-        window.onload = function() {
-            updateUI();
-        };
-    </script>
-</body>
-</html>
-```eof
-
-위 파일을 저장하신 후 브라우저(크롬 등)로 열어보시면 원하시던 완벽한 플래시카드 화면을 바로 사용하실 수 있습니다! 암기하시기에 훨씬 편리하실 거예요. 대회 준비 화이팅입니다!
+        <!-- 11월 22일 연습 일정 -->
+        <div class="schedule-card">
+            <div class="schedule-header">
+                <span class="date-badge">11월 22일 주일
+                
